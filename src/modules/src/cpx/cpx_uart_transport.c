@@ -274,7 +274,7 @@ void cpxUARTTransportInit() {
 
   evGroup = xEventGroupCreate();
 
-  uart2Init(CONFIG_CPX_UART2_BAUDRATE);
+  uart1Init(CONFIG_CPX_UART2_BAUDRATE);
 
   // Initialize task for the ESP while it's held in reset
   xTaskCreate(CPX_UART_RX, AIDECK_ESP_RX_TASK_NAME, AI_DECK_TASK_STACKSIZE, NULL,

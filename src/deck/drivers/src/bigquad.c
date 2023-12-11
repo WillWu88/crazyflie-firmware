@@ -40,6 +40,12 @@
 #include "uart1.h"
 #include "msp.h"
 
+// include CPX transport layers
+#include "cpx_internal_router.h"
+#include "cpx_external_router.h"
+#include "cpx_uart_transport.h"
+#include "cpx.h"
+
 #include "FreeRTOS.h"
 #include "task.h"
 
@@ -121,7 +127,7 @@ static const DeckDriver bigquad_deck = {
 
   .usedPeriph = DECK_USING_TIMER3 | DECK_USING_TIMER14,
   .usedGpio = DECK_USING_PA2 | DECK_USING_PA3 | DECK_USING_IO_3 |
-              DECK_USING_IO_2 | DECK_USING_PA7,
+              DECK_USING_IO_2 | DECK_USING_PA7 | DECK_USING_UART1,
   .init = bigquadInit,
   .test = bigquadTest,
 };
